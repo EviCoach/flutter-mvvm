@@ -3,7 +3,7 @@ import 'package:mvvm_app/app/locator.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 import 'app/router.gr.dart' as Router;
-import 'ui/views/future_example/future_example_view.dart';
+import 'ui/views/stream_example/stream_example_view.dart';
 
 void main() {
   setupLocator();
@@ -30,7 +30,8 @@ class MyApp extends StatelessWidget {
       // Testing only
       // home: PartialBuildsView(),
       // home: ReactiveExampleView(),
-      home: FutureExampleView(),
+      // home: FutureExampleView(),
+      home: StreamExampleView(),
       onGenerateRoute: Router.Router(),
       navigatorKey: locator<NavigationService>().navigatorKey,
     );

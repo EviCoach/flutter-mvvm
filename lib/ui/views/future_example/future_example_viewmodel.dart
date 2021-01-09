@@ -1,6 +1,6 @@
 import 'package:stacked/stacked.dart';
 
-class FutureExampleViewModel extends FutureViewModel {
+class FutureExampleViewModel extends FutureViewModel<String> {
   Future<String> getDataFromServer() async {
     await Future.delayed(Duration(seconds: 2));
     // return "Fetched from server";
@@ -8,5 +8,5 @@ class FutureExampleViewModel extends FutureViewModel {
   }
 
   @override
-  Future futureToRun() => getDataFromServer();
+  Future<String> futureToRun() => getDataFromServer();
 }
