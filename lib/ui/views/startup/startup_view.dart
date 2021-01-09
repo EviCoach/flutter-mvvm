@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:mvvm_app/ui/views/startup/startup_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
-import 'home_viewmodel.dart';
-
-class HomeView extends StatelessWidget {
+class StartupView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<HomeViewModel>.reactive(
+    return ViewModelBuilder<StartupViewModel>.reactive(
         builder: (context, model, child) => Scaffold(
               body: Center(
-                child: Text(model.title),
+                child: Text('Startup View'),
               ),
               floatingActionButton: FloatingActionButton(
-                onPressed: model.updateCounter,
+                onPressed: () => model.navigateToHome(),
               ),
             ),
-        viewModelBuilder: () => HomeViewModel());
+        viewModelBuilder: () => StartupViewModel());
   }
 }
